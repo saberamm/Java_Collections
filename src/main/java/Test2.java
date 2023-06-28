@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.TreeSet;
 
 public class Test2 {
-
+//this methode create two tree set and put 10 character in it
     public static void run() {
         Random random = new Random();
         TreeSet<Character> set1 = new TreeSet<>();
@@ -23,14 +23,14 @@ public class Test2 {
         interSection(set1,set2);
 
     }
-
+//this methode union two treeset and print them together
     public static void union(TreeSet<Character> set1, TreeSet<Character> set2) {
         TreeSet<Character> unionSet = new TreeSet<>(set1);
         unionSet.addAll(set2);
 
         System.out.println("Union set: " + unionSet);
     }
-
+    //this methode print the same character that they have
     public static void interSection(TreeSet<Character> set1, TreeSet<Character> set2) {
 
         TreeSet<Character> intersectionSet = new TreeSet<>(set1);
