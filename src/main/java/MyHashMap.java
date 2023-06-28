@@ -12,10 +12,12 @@ public class MyHashMap<K, V> {
         }
     }
 
+    //this methode create a hashcode from the key of pair class
     private int getHash(K key) {
         return Math.abs(key.hashCode() % size);
     }
 
+    //this methode can put key and value in hashmap by using pair
     public boolean put(K key, V value) {
         int hash = getHash(key);
         ArrayList<Pair<K, V>> bucket = customMap.get(hash);
@@ -36,6 +38,7 @@ public class MyHashMap<K, V> {
         return true;
     }
 
+    //To check if a specific key exists in a HashMap
     public boolean containsKey(K key) {
         int hash = getHash(key);
         ArrayList<Pair<K, V>> bucket = customMap.get(hash);
@@ -51,6 +54,7 @@ public class MyHashMap<K, V> {
         return false;
     }
 
+    //to check if hash map is empty
     public boolean isEmpty() {
         for (ArrayList<Pair<K, V>> bucket : customMap) {
             if (bucket != null && !bucket.isEmpty()) {
@@ -61,6 +65,7 @@ public class MyHashMap<K, V> {
         return true;
     }
 
+    //this methode will return all values of hashmap
     public ArrayList<V> getAllValues() {
         ArrayList<V> values = new ArrayList<>();
 
@@ -74,6 +79,7 @@ public class MyHashMap<K, V> {
 
         return values;
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -88,7 +94,9 @@ public class MyHashMap<K, V> {
         sb.append("}");
         return sb.toString();
     }
-    public void replace(K key,V oldValue,V newValue) {
+
+    //this methode can replace an old value of key with a new value
+    public void replace(K key, V oldValue, V newValue) {
         int hash = getHash(key);
         ArrayList<Pair<K, V>> bucket = customMap.get(hash);
 
